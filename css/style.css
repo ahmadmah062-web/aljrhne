@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر محمد مجاهد - الصفحة الرئيسية</title>
+    <style>
+        /* إعادة ضبط بعض الخصائص الأساسية */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            direction: rtl;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 0 12px;
+        }
+        
+        /* تنسيق الهيدر */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            border-radius: 50%;
+            margin-left: 15px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .logo h1 {
+            color: #2d3e50;
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 5px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #2d3e50;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            background-color: #f8f9fa;
+            color: #007bff;
+        }
+        
+        /* تنسيق المحتوى الرئيسي */
+        main {
+            padding: 30px 0;
+        }
+        
+        /* قسم البطل */
+        .hero {
+            background: linear-gradient(135deg, #2d3e50 0%, #3498db 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* قسم المنتجات المميزة */
+        .featured-products {
+            margin-bottom: 40px;
+        }
+        
+        .featured-products h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2d3e50;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .featured-products h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background-color: #3498db;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-card figure {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .product-card figcaption {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(52, 152, 219, 0.8);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+        }
+        
+        .product-card h3 {
+            padding: 15px 15px 5px;
+            color: #2d3e50;
+        }
+        
+        .product-card p {
+            padding: 0 15px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .price {
+            padding: 10px 15px;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .add-to-cart {
+            display: block;
+            width: calc(100% - 30px);
+            margin: 0 15px 15px;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #2980b9;
+        }
+        
+        /* قسم عن المتجر */
+        .about-us {
+            background-color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-us h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2d3e50;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .about-us h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background-color: #3498db;
+        }
+        
+        .about-us p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            line-height: 1.8;
+        }
+        
+        blockquote {
+            border-right: 4px solid #3498db;
+            padding-right: 20px;
+            margin: 25px auto;
+            font-style: italic;
+            color: #6c757d;
+            max-width: 700px;
+        }
+        
+        .features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features-list li {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            position: relative;
+            padding-right: 40px;
+        }
+        
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        /* قسم النشرة البريدية */
+        .newsletter {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        
+        .newsletter h2 {
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background-color: #2d3e50;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #1a252f;
+        }
+        
+        /* الشريط الجانبي */
+        .sidebar {
+            background-color: white;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar h3 {
+            color: #2d3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f8f9fa;
+        }
+        
+        .special-offer {
+            background-color: #fff4e6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border-right: 4px solid #ffa94d;
+        }
+        
+        .special-offer p:first-child {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* التذييل */
+        footer {
+            background-color: #2d3e50;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #3498db;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+            padding-right: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* التصميم المتجاوب */
+        @media (max-width: 992px) {
+            header .container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 30px;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- محتوى الصفحة كما هو -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150" alt="شعار المتجر" width="150" height="150">
+                <h1>متجر محمد مجاهد</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html"> المنتجات الشوكلاتة</a></li>
+                    <li><a href="category.html">الأقسام</a></li>
+                    <li><a href="cart.html">السلة</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>مرحباً بكم في متجر محمد مجاهد الإلكتروني</h2>
+                <p>نقدم لكم أفضل المنتجات بأسعار منافسة وجودة عالية</p>
+                <a href="product.html" class="cta-button">تسوق الآن</a>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="container">
+                <h2>المنتجات المميزة</h2>
+                <div class="products-grid">
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://via.placeholder.com/300" alt="منتج 1">
+                            <figcaption>منتج إلكتروني عالي الجودة</figcaption>
+                        </figure>
+                        <h3>جهاز ذكي متطور</h3>
+                        <p>جهاز إلكتروني متطور يوفر أحدث التقنيات لتسهيل حياتك اليومية</p>
+                        <div class="price">299 ريال</div>
+                        <button class="add-to-cart">إضافة للسلة</button>
+                    </article>
+
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://via.placeholder.com/300" alt="منتج 2">
+                            <figcaption>شوكولاتة بلجيكية فاخرة</figcaption>
+                        </figure>
+                        <h3>شوكولاتة بريميام</h3>
+                        <p>شوكولاتة بلجيكية عالية الجودة بمذاق لا يقاوم وتغليف فاخر</p>
+                        <div class="price">75 ريال</div>
+                        <button class="add-to-cart">إضافة للسلة</button>
+                    </article>
+
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://via.placeholder.com/300" alt="منتج 3">
+                            <figcaption>جهاز منزلي متكامل</figcaption>
+                        </figure>
+                        <h3>طابعة ليزر متطورة</h3>
+                        <p>طابعة ليزر عالية الدقة وسريعة الأداء مع تقنية الاتصال اللاسلكي</p>
+                        <div class="price">450 ريال</div>
+                        <button class="add-to-cart">إضافة للسلة</button>
+                    </article>
+
+                    <article class="product-card">
+                        <figure>
+                            <img src="https://via.placeholder.com/300" alt="منتج 4">
+                            <figcaption>شوكولاتة بالبندق</figcaption>
+                        </figure>
+                        <h3>شوكولاتة نوتيلا</h3>
+                        <p>شوكولاتة كريمية مع البندق، مثالية للفطور والوجبات الخفيفة</p>
+                        <div class="price">55 ريال</div>
+                        <button class="add-to-cart">إضافة للسلة</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <h2>عن متجرنا</h2>
+                <p>متجر محمد مجاهد حيدر حسن الجرهني هو متجر إلكتروني متخصص في تقديم أفضل المنتجات الإلكترونية والشوكولاتة الفاخرة، نسعى دائمًا لتلبية احتياجات عملائنا بأعلى معايير الجودة.</p>
+                
+                <blockquote>
+                    "نحن ملتزمون بتقديم أفضل الخدمات لعملائنا الكرام وضمان رضاهم التام"
+                </blockquote>
+                
+                <ul class="features-list">
+                    <li>شحن سريع ومجاني للطلبات فوق 200 ريال</li>
+                    <li>ضمان على جميع المنتجات</li>
+                    <li>خدمة عملاء متاحة 24/7</li>
+                    <li>إمكانية الإرجاع خلال 14 يوم</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>اشترك في نشرتنا الإخبارية</h2>
+                <p>احصل على آخر العروض والمنتجات الجديدة</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit">اشتراك</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <aside class="sidebar">
+        <div class="container">
+            <h3>عروض خاصة</h3>
+            <div class="special-offer">
+                <p>خصم 20% على جميع المنتجات</p>
+                <p>استخدم كود: SAVE20</p>
+            </div>
+            
+            <h3>تواصل معنا</h3>
+            <div class="contact-info">
+                <p>📞 967712094680+</p>
+                <p>📧 البريد: info@mohammedstore.com</p>
+                <p>📍 العنوان: صنعاء شارع الخمسين جولة بيت بوس</p>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>خدمة العملاء</h3>
+                    <ul>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الشحن والتوصيل</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>تابعنا</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1DMhkG9tw6/">فيسبوك</a>
+                        <a href="#">تويتر</a>
+                        <a href="https://www.instagram.com/aljhne_1?igsh=MWQ5Y2w2ZjBiZjV0Yw==">إنستغرام</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 متجر محمد مجاهد حيدر حسن الجرهني. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

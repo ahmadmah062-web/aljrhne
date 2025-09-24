@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر محمد مجاهد - سلة التسوق</title>
+    <link rel="stylesheet" href="C:\Users\ucer\Desktop\web1/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="C:\Users\ucer\Desktop\web1\images.jfif" alt="شعار المتجر" width="50" height="50">
+                <h1>متجر محمد مجاهد</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="product.html">المنتجات</a></li>
+                    <li><a href="category.html">الأقسام</a></li>
+                    <li><a href="cart.html" class="active">السلة</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cart-section">
+            <div class="container">
+                <h1>سلة التسوق</h1>
+                
+                <div class="cart-content">
+                    <div class="cart-items">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>المنتج</th>
+                                    <th>السعر</th>
+                                    <th>الكمية</th>
+                                    <th>المجموع</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-items-body">
+                                <tr class="cart-item" data-product-id="1">
+                                    <td class="product-info">
+                                        <img src="../images/RV4M5YOtwkpJ.jpg" alt="جهاز ذكي متطور" width="80" height="80">
+                                        <div class="product-details">
+                                            <h3>جهاز ذكي متطور</h3>
+                                            <p>منتج إلكتروني عالي الجودة</p>
+                                        </div>
+                                    </td>
+                                    <td class="price">299 ريال</td>
+                                    <td class="quantity">
+                                        <div class="quantity-controls">
+                                            <button onclick="decreaseQuantity(1)">-</button>
+                                            <input type="number" value="1" min="1" id="quantity-1" onchange="updateQuantity(1)">
+                                            <button onclick="increaseQuantity(1)">+</button>
+                                        </div>
+                                    </td>
+                                    <td class="total" id="total-1">299 ريال</td>
+                                    <td class="actions">
+                                        <button onclick="removeFromCart(1)" class="remove-btn">حذف</button>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="cart-item" data-product-id="2">
+                                    <td class="product-info">
+                                        <img src="../images/Yh5KqZczB36i.jpg" alt="أكسسوار تقني" width="80" height="80">
+                                        <div class="product-details">
+                                            <h3>أكسسوار تقني</h3>
+                                            <p>منتج تقني حديث</p>
+                                        </div>
+                                    </td>
+                                    <td class="price">149 ريال</td>
+                                    <td class="quantity">
+                                        <div class="quantity-controls">
+                                            <button onclick="decreaseQuantity(2)">-</button>
+                                            <input type="number" value="2" min="1" id="quantity-2" onchange="updateQuantity(2)">
+                                            <button onclick="increaseQuantity(2)">+</button>
+                                        </div>
+                                    </td>
+                                    <td class="total" id="total-2">298 ريال</td>
+                                    <td class="actions">
+                                        <button onclick="removeFromCart(2)" class="remove-btn">حذف</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <aside class="cart-summary">
+                        <div class="summary-card">
+                            <h3>ملخص الطلب</h3>
+                            
+                            <div class="summary-row">
+                                <span>المجموع الفرعي:</span>
+                                <span id="subtotal">597 ريال</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>الشحن:</span>
+                                <span id="shipping">مجاني</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>الضريبة (15%):</span>
+                                <span id="tax">89.55 ريال</span>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="summary-row total-row">
+                                <span>المجموع الكلي:</span>
+                                <span id="grand-total">686.55 ريال</span>
+                            </div>
+                            
+                            <button onclick="proceedToCheckout()" class="checkout-btn">إتمام الشراء</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="product.html">المنتجات</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>خدمة العملاء</h3>
+                    <ul>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الشحن والتوصيل</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>تابعنا</h3>
+                    <div class="social-links">
+                        <a href="#">فيسبوك</a>
+                        <a href="#">تويتر</a>
+                        <a href="#">إنستغرام</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 متجر محمد مجاهد حيدر حسن الجرهني. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
+

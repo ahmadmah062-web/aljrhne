@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر محمد مجاهد - اتصل بنا</title>
+    <link rel="stylesheet" href="C:\Users\ucer\Desktop\web1/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="C:\Users\ucer\Desktop\web1\img\505766066_17940323352002205_999481171423423305_n.jpg"  alt="شعار المتجر" width="150" height="150">
+                <h1>متجر محمد مجاهد</h1>
+            </div>
+           
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html"> المنتجات اضافية </a></li>
+                    <li><a href="category.html">الأقسام</a></li>
+                    <li><a href="cart.html">السلة</a></li>
+                    <li><a href="contact.html" class="active">اتصل بنا</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>اتصل بنا</h1>
+                <p>نحن هنا لمساعدتك. تواصل معنا في أي وقت</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-section">
+                        <h2>أرسل لنا رسالة</h2>
+                        <form id="contact-form" class="contact-form" onsubmit="return submitContactForm(event)">
+                            <div class="form-group">
+                                <label for="firstName">الاسم الأول:</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">الموضوع:</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">اختر الموضوع</option>
+                                    <option value="general">استفسار عام</option>
+                                    <option value="order">استفسار عن طلب</option>
+                                    <option value="product">استفسار عن منتج</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">الرسالة:</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="اكتب رسالتك هنا..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info-section">
+                        <h2>معلومات الاتصال</h2>
+                        
+                        <div class="contact-info-card">
+                            <div class="contact-item">
+                                <h3>📞 الهاتف</h3>
+                                <p>967712094680+</p>
+                                <p>متاح 24/7</p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <h3>📧 البريد الإلكتروني</h3>
+                                <p>info@mohammedstore.com</p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <h3>📍 العنوان</h3>
+                                <p>   اليمن  صنعاء شارع الخمسين جولة بيت بوس</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="products.html">المنتجات</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>خدمة العملاء</h3>
+                    <ul>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الشحن والتوصيل</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>تابعنا</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1DMhkG9tw6/">فيسبوك</a>
+                        <a href="#">تويتر</a>
+                        <a href="https://www.instagram.com/aljhne_1?igsh=MWQ5Y2w2ZjBiZjV0Yw==">إنستغرام</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 متجر محمد مجاهد حيدر حسن الجرهني. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
+
